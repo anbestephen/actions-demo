@@ -1,4 +1,4 @@
-name: Greetings
+name: Build Node App
 
 on: [pull_request, issues]
 

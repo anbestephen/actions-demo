@@ -22,4 +22,4 @@ jobs:
           command: ls -a
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER_NAME }}
-          privateKey: ${{ secrets.PRIVATE_KEY}}
+          privateKey: ${{ secrets.PRIVATE_KEY }}

@@ -35,10 +35,7 @@ jobs:
           username: ${{ secrets.USER_NAME }}
           privateKey: ${{ secrets.PRIVATE_KEY }}
           command: |
-            echo branch is ${{ env.git_branch }}
-            echo repo is ${{ env.git_repo }}
-            ls -lah /opt/webapp
-            cd /opt/webapp
-            pwd
-            ls -las /opt/webapp/${{ env.git_branch }}.${{ env.git_repo }}
+            cd /opt/webapp/${{ env.git_branch }}.${{ env.git_repo }}
+            git pull origin ${{ env.git_branch }}
+            ls -alh
 

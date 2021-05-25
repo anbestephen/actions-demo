@@ -36,6 +36,8 @@ jobs:
           username: ${{ secrets.USER_NAME }}
           privateKey: ${{ secrets.PRIVATE_KEY }}
           command: |
+            echo branch is $git_branch
+            echo repo is $git_repo
             ls -lah /opt/webapp
             cd /opt/webapp
             pwd

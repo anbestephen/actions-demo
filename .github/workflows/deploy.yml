@@ -19,10 +19,12 @@ jobs:
       - name: ls -a via ssh
         uses: garygrossgarten/github-action-ssh@release
         with:
-          command: ls -a
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER_NAME }}
           privateKey: ${{ secrets.PRIVATE_KEY }}
+          command: |
+            ls -lah
+            echo "I am $NAME"
           
       - name: Execute SSH commmands on remote server
         uses: JimCronqvist/action-ssh@master

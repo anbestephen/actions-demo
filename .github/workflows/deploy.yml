@@ -28,6 +28,9 @@ jobs:
   
       - name: Execute SSH commmands on remote server
         uses: garygrossgarten/github-action-ssh@release
+        env:
+          git_branch: eng:${{ steps.extract_branch.outputs.branch }}
+          git_repo: eng:${{ steps.extract_repo.outputs.repo }}
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER_NAME }}
@@ -36,5 +39,5 @@ jobs:
             ls -lah /opt/webapp
             cd /opt/webapp
             pwd
-            ls -las /opt/webapp/eng:${{ steps.extract_branch.outputs.branch }}.eng:${{ steps.extract_repo.outputs.repo }}
+            ls -las /opt/webapp/${git_branch}.${git_repo}
             echo "I am $NAME"

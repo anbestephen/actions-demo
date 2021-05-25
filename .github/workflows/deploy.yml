@@ -40,5 +40,5 @@ jobs:
             ls -lah /opt/webapp
             cd /opt/webapp
             pwd
-            ls -las /opt/webapp/${git_branch}.${git_repo}
-            echo "I am $NAME"
+            ls -las /opt/webapp/${{ env.git_branch }}.${{ env.git_repo }}
+

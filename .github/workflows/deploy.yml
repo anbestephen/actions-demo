@@ -16,22 +16,12 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: ls -a via ssh
+      - name: Execute SSH commmands on remote server
         uses: garygrossgarten/github-action-ssh@release
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER_NAME }}
           privateKey: ${{ secrets.PRIVATE_KEY }}
-          command: |
-            ls -lah
-            echo "I am $NAME"
-          
-      - name: Execute SSH commmands on remote server
-        uses: JimCronqvist/action-ssh@master
-        with:
-          hosts: ${{ secrets.USER_NAME }}@${{ secrets.HOST }}
-          privateKey: ${{ secrets.PRIVATE_KEY }}
-          debug: false
           command: |
             ls -lah
             echo "I am $NAME"

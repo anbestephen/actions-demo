@@ -29,6 +29,7 @@ jobs:
         with:
           hosts: ${{ secrets.USER_NAME }}@${{ secrets.HOST }}
           privateKey: ${{ secrets.PRIVATE_KEY }}
+          debug: false
           command: |
             ls -lah
             echo "I am $NAME"

@@ -38,4 +38,5 @@ jobs:
             cd /opt/webapp/${{ env.git_branch }}.${{ env.git_repo }}
             git pull origin ${{ env.git_branch }}
             ls -alh
+            cat run.sh
 

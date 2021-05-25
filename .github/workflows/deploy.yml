@@ -23,3 +23,12 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER_NAME }}
           privateKey: ${{ secrets.PRIVATE_KEY }}
+          
+      - name: Execute SSH commmands on remote server
+        uses: JimCronqvist/action-ssh@master
+        with:
+          hosts: ${{ secrets.USER_NAME }}@${{ secrets.HOST }}
+          privateKey: ${{ secrets.PRIVATE_KEY }}
+          command: |
+            ls -lah
+            echo "I am $NAME"

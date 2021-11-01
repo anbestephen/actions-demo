@@ -1,0 +1,21 @@
+name: Build PALISADE main branch
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    - name: build
+      run: |
+        mkdir build
+        echo "hi there" > build/output.txt
+    - name: build-upload-artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: build-artifact
+        path: |
+          build/
+        retention-days: 1

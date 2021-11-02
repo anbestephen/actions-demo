@@ -11,6 +11,8 @@ jobs:
     steps:
     - name: build
       run: |
+        export NAME=ambes
+        export LNAME=stepne
         mkdir build
         mkdir source
         echo "hi there" > build/output.txt
@@ -39,3 +41,5 @@ jobs:
         ls -R
         ls -alh build/
         ls -alh source/
+        printenv
+        env

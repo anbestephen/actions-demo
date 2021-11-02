@@ -28,7 +28,9 @@ jobs:
           build/
           source/
         retention-days: 1
-        
+    - run: rm -rf build
+    - run: rm -f source
+    - run: ls -alh
     - uses: actions/download-artifact@v2
       with:
         name: build-artifact

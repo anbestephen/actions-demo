@@ -12,11 +12,28 @@ jobs:
     - name: build
       run: |
         mkdir build
+        mkdir source
         echo "hi there" > build/output.txt
+        echo "hi there" > build/source.txt
+        echo "hi there" > build/build.txt
+        echo "hi there" > build/output.txt
+        echo "hi there" > source/one.txt
+        echo "hi there" > source/two.txt
+        echo "hi there" > source/three.txt
     - name: build-upload-artifacts
       uses: actions/upload-artifact@v2
       with:
         name: build-artifact
         path: |
           build/
+          source/
         retention-days: 1
+        
+    - uses: actions/download-artifact@v2
+      with:
+        name: build-artifact
+    - name: Display structure of downloaded files
+      run: |
+        ls -R
+        ls -alh build/
+        ls -alh source/

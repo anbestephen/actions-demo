@@ -10,13 +10,22 @@ jobs:
     runs-on: ubuntu-latest
     needs: test
     steps:
-      - name: Deploy Non prod app
-        if: github.ref == 'refs/heads/develop'
+      - name: one
         run: |
-          echo "This is develop branch"
-          exit 0
-      - name: Deploy Prodapp
-        if: github.ref == 'refs/heads/prod'
+          pwd
+          mkdir -p one/two/tree
+
+      - name: two
         run: |
-          echo "This is prod branch"
-          exit 0
+          pwd
+          cd one
+          pwd
+          
+      - name: tree
+        run: |
+          pwd
+          
+      - name: four
+        run: |
+          pwd
+                 
